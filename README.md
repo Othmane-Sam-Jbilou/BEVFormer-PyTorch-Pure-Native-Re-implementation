@@ -49,17 +49,8 @@ A modular, native PyTorch reimplementation of BEVFormer for 3D Bird’s-Eye-View
 
 # Model Architecture Overview
 
-## Backbone
-Extracts feature maps from $6 \times \text{camera views}$ using ResNet-18 [cite: 3].
-
-## 3D Reference Grid
-Generates 3D physical coordinates $(X, Y, Z)$ in ego space [cite: 3].
-
-## Temporal Self-Attention (TSA)
-Warps previous BEV representations using relative ego-motion ($R_{\text{curr2prev}}$, $t_{\text{curr2prev}}$) and fuses them with current queries using single-scale deformable attention [cite: 3].
-
-## Spatial Cross-Attention (SCA)
-Samples image features across camera channels using 3D-to-2D geometric projections [cite: 3].
-
-## Decoder Head
-Maps refined BEV query tokens to multi-class spatial logits via convolutional refinement blocks [cite: 3].
+- **Backbone:** Extracts feature maps from $6 \times \text{camera views}$ using ResNet-18.
+- **3D Reference Grid:** Generates 3D physical coordinates $(X, Y, Z)$ in ego space.
+- **Temporal Self-Attention (TSA):** Warps previous BEV representations using relative ego-motion ($R_{\text{curr2prev}}$, $t_{\text{curr2prev}}$) and fuses them with current queries using single-scale deformable attention.
+- **Spatial Cross-Attention (SCA):** Samples image features across camera channels using 3D-to-2D geometric projections.
+- **Decoder Head:** Maps refined BEV query tokens to multi-class spatial logits via convolutional refinement blocks.
